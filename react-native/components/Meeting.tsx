@@ -1,6 +1,6 @@
 import React, {useCallback, useRef} from 'react';
 
-import {JitsiMeeting} from '@jitsi/react-native-sdk';
+import {JitsiMeeting, JitsiRefProps} from '@jitsi/react-native-sdk';
 
 import {useNavigation} from '@react-navigation/native';
 
@@ -10,7 +10,7 @@ interface MeetingProps {
 }
 
 const Meeting = ( { route }: MeetingProps ) => {
-  const jitsiMeeting = useRef(null);
+  const jitsiMeeting = useRef<JitsiRefProps>(null);
   const navigation = useNavigation();
 
   const { room } = route.params;
